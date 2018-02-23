@@ -1,0 +1,10 @@
+<button (click) = "checkAll()">Click Me!</button>
+<button (click) = "loadData()">Back in Time</button>
+<ul>
+  <li *ngFor = "let cart of carts"><app-checker [cart] = "cart" (idEvent) = "receiveMessage($event)"></app-checker></li>
+</ul>
+{{ message }}
+<!-- 
+<ul>after
+  <li *ngFor = "let cart of carts"><span>{{ cart.id }}</span>{{ cart.name }}<input type="checkbox" [checked] = "cart.status"></li>
+</ul> -->
