@@ -26,14 +26,19 @@ export class CartComponent implements OnInit {
   }
 
   checkAll() {
+    this.saveCartsArray = this.carts;
+    console.log (this.carts);
+    console.log (this.saveCartsArray);
     this.carts.map( elem => elem.status = this.flag);
     this.flag = !this.flag;
   }
 
   loadData() {
   if (this.toggle) {
-      this.carts = JSON.parse(this.saveCarts);
+    // this.carts = JSON.parse(this.saveCarts);
+      this.saveCartsArray = this.carts;
       console.log('load data');
+      console.log (this.saveCartsArray);
   }
     this.toggle = !this.toggle;
     // console.log(this.saveCarts);
@@ -51,8 +56,9 @@ export class CartComponent implements OnInit {
         }
     });
  
-    this.saveCarts = JSON.stringify(this.carts).toString();
-    this.saveCartsArray = this.carts;
-    console.log (this.carts);
+    // this.saveCarts = JSON.stringify(this.carts).toString();
+    // this.saveCartsArray = this.carts;
+    // console.log (this.carts);
+    // console.log (this.saveCartsArray);
   } 
 }
