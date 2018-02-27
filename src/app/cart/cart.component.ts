@@ -26,7 +26,10 @@ export class CartComponent implements OnInit {
   }
 
   checkAll() {
-    this.saveCartsArray = this.carts;
+
+    
+    for (var i = 0; i < this.carts.length; i++) this.saveCartsArray[i] = this.carts[i];
+    // this.saveCartsArray = this.carts;
     console.log (this.carts);
     console.log (this.saveCartsArray);
     this.carts.map( elem => elem.status = this.flag);
