@@ -1,10 +1,11 @@
 <button (click) = "checkAll()">Click Me!</button>
 <button (click) = "loadData()">Back in Time</button>
-<ul>
+<button (click) = "makeItGreen()">Make me Green</button>
+<!-- <ul>
   <li *ngFor = "let cart of carts"><app-checker [cart] = "cart" (idEvent) = "receiveMessage($event)"></app-checker></li>
-</ul>
-{{ message }}
-<!-- 
-<ul>after
-  <li *ngFor = "let cart of carts"><span>{{ cart.id }}</span>{{ cart.name }}<input type="checkbox" [checked] = "cart.status"></li>
 </ul> -->
+<button (click) = "addToService('test')">add to service</button>
+<button (click) = "addnew(ss)">new ADD </button>
+#{{mystr | json}}
+>>>> <b>{{ oMessage | async | json}}</b>
+<app-box></app-box>

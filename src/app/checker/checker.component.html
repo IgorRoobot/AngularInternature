@@ -1,1 +1,3 @@
-<span>{{ cart.id }}</span>{{ cart.name }}<input type="checkbox" [checked] = "cart.status" (click) = "itemId(cart)">
+<div [ngClass] = "{'green': greenBtn == true}" class="body">
+    <span>{{ cart.id }}</span><a routerLink="/form/view/{{ cart.id }}">{{ cart.name }}</a><input type="checkbox" [checked] = "cart.status" (click) = "itemId(cart)">
+</div>

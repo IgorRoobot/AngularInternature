@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
 import { CartModel } from '../cartModel'
 
 @Component({
@@ -7,6 +7,7 @@ import { CartModel } from '../cartModel'
   styleUrls: ['./checker.component.css']
 })
 export class CheckerComponent implements OnInit {
+  greenBtn: Boolean;
 
   @Input() cart: CartModel;
   @Output() idEvent = new EventEmitter<any>(); 
@@ -18,11 +19,16 @@ export class CheckerComponent implements OnInit {
 
   itemId(item){
     this.cart.status = !this.cart.status;
-  //  console.log(this.cart.status);
 
     this.idEvent.emit({
       status:this.cart.status,
       item:item
       });
+  }
+
+  divGreen(){
+    if(this.cart.status){
+      this.greenBtn = true;
+    }
   }
 }
