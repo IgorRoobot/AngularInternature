@@ -1,0 +1,9 @@
+<p>
+  firebase-component works!
+</p>
+<ul>
+  <li class="text" *ngFor="let item of items | async; let i=index; ">
+    {{i}}={{item.id}}: {{item.name}} <span style = "font-weight:bold;">and the age is {{item.age}} or {{item.age+ 20}}</span>
+  </li>
+</ul>
+<button (click)="addItem('Sjcris')">Set Name</button>
